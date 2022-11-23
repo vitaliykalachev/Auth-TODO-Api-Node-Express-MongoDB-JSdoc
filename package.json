@@ -1,14 +1,14 @@
 {
   "name": "auth_todo_list",
   "version": "1.0.0",
-  "description": "",
+  "description": "``` <div></div> ```",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "generate-docs": "jsdoc -c jsdoc.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vitaliy Kalachev",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,5 +21,17 @@
     "mongoose": "^6.7.2",
     "nodemon": "^2.0.20",
     "vercel": "^28.5.6"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc/issues"
+  },
+  "homepage": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc#readme"
 }
