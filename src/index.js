@@ -13,17 +13,18 @@ const app = express();
  * @see <a href="https://vitaliykalachev.github.io/">CV Profile</a>
  * @see <a href="https://github.com/vitaliykalachev">Github</a>
  */
-app.use(cors({
-  origin: ["http://localhost:5000",
-   "https://auth-todo-list-eight.vercel.app",
-  "https://auth-todo-list-vitaliykalachev.vercel.app/"
-  ],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5000",
+      "https://auth-todo-list-eight.vercel.app",
+      "https://auth-todo-list-vitaliykalachev.vercel.app/",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use("/auth", authRouter);
-
-
 
 const start = async () => {
   try {
