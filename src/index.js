@@ -14,7 +14,7 @@ const app = express();
  * @see <a href="https://github.com/vitaliykalachev">Github</a>
  */
 app.use(cors({
-  origin: ["http://localhost:5000"],
+  origin: ["http://localhost:5000", "https://auth-todo-list-eight.vercel.app"],
   credentials: true
 }));
 app.use(express.json());
