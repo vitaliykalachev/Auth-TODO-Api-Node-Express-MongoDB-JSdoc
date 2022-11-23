@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 const express = require("express");
 const mongoose = require("mongoose");
