@@ -28,7 +28,6 @@
   "directories": {
     "doc": "docs"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc.git"
