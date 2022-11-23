@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>authRouter.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -35,151 +35,52 @@
 
 <div id="main">
     
+    <h1 class="page-title">authRouter.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module authRouter [All routers]
+ */
+
+const Router = require('express')
 
 
-    <section class="package">
-        <h3> </h3>		
+const router = new Router()
+const controller = require('./authController')
+const {check} = require('express-validator')
+
+
+const authMiddleware = require('./middlewaree/authMiddleware')
+const roleMiddleware = require('./middlewaree/roleMiddleware')
+
+
+
+router.post('/registration', [
+    check('username', 'Username cannot be empty').notEmpty(),
+    check('password', 'Password must be longer than 4 and shorter than 10 characters').isLength({min:4, max:10})
+], controller.registration)
+router.post('/login', controller.login)
+router.get('/users', roleMiddleware(['USER']), controller.getUsers)
+
+router.get('/todo', authMiddleware, controller.getTodos)
+router.get('/todo/:id', authMiddleware, controller.getOne)
+
+router.post('/todo', authMiddleware, controller.create)
+router.put('/todo', authMiddleware, controller.update)
+router.delete('/todo/:id', authMiddleware, controller.delete)
+
+
+
+module.exports = router</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-            index.js
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>index.js is the hompage for this application</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line10">line 10</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Vitliy Kalachev</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://vitaliykalachev.github.io/">CV Profile</a></li>
-        
-            <li><a href="https://github.com/vitaliykalachev">Github</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-            
-                <div class="description usertext"><p>index.js is the hompage for this application</p></div>
-            
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
 
 
 

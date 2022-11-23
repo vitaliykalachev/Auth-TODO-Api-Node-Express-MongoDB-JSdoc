@@ -29,7 +29,7 @@
 <nav >
     
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="authController.html">authController</a><ul class='methods'><li data-type='method'><a href="authController.html#.create#create">create</a></li><li data-type='method'><a href="authController.html#.delete#delete">delete</a></li><li data-type='method'><a href="authController.html#.getOne#getOne">getOne</a></li><li data-type='method'><a href="authController.html#.getTodos#getTodos">getTodos</a></li><li data-type='method'><a href="authController.html#.getUsers#getUsers">getUsers</a></li><li data-type='method'><a href="authController.html#.login#login">login</a></li><li data-type='method'><a href="authController.html#.registration#registration">registration</a></li><li data-type='method'><a href="authController.html#.update#update">update</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#generateAccessToken">generateAccessToken</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a></li></ul><h3>Modules</h3><ul><li><a href="module-authMiddleware%2520%255BToken%255D.html">authMiddleware [Token]</a></li><li><a href="module-authRouter%2520%255BAll%2520routers%255D.html">authRouter [All routers]</a></li><li><a href="module-roleMiddleware%2520%255BRole%255D.html">roleMiddleware [Role]</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-tutorial.html">tutorial</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Create_Todo">Create_Todo</a></li><li><a href="global.html#Delete_Todo">Delete_Todo</a></li><li><a href="global.html#Generate_Access_Token">Generate_Access_Token</a></li><li><a href="global.html#Get_All_Todos">Get_All_Todos</a></li><li><a href="global.html#Get_All_Users">Get_All_Users</a></li><li><a href="global.html#Get_One_Todo">Get_One_Todo</a></li><li><a href="global.html#LoginAuthentication">Login Authentication</a></li><li><a href="global.html#Registration">Registration</a></li><li><a href="global.html#Update_Todo">Update_Todo</a></li></ul>
     
 </nav>
 
@@ -121,18 +121,12 @@
     
 
     
-
-    
-        <h3 class="subsection-title">Methods</h3>
+        <h3 class="subsection-title">Members</h3>
 
         
             
+<h4 class="name" id="Generate_Access_Token"><span class="type-signature"></span>Generate_Access_Token<span class="type-signature"> :object</span></h4>
 
-    
-
-    <h4 class="name" id="generateAccessToken"><span class="type-signature"></span>generateAccessToken<span class="signature">(id, roles)</span><span class="type-signature"></span></h4>
-
-    
 
 
 
@@ -143,7 +137,93 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line15">line 15</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="Create_Todo"><span class="type-signature type-signature-async">(async) </span>Create_Todo<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#Todo">Todo</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>POST    /auth/todo</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creating a new todo</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line281">line 281</a>
     </li></ul></dd>
     
 
@@ -215,13 +295,13 @@
 
         <tr>
             
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>request</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;<a href="global.html#TodoCreate">TodoCreate</a>></span>
 
 
 
@@ -232,20 +312,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Sent information in request body</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>roles</code></td>
+                <td class="name"><code>response</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
 
 
 
@@ -256,7 +336,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Array of todo that was created</p></td>
         </tr>
 
     
@@ -279,11 +359,1484 @@
 
 
 <h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Delete_Todo"><span class="type-signature type-signature-async">(async) </span>Delete_Todo<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#Todo">Todo</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>DELETE    /auth/todo/:id</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Deleting todo by id</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line354">line 354</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
 
         
 
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">request</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sent Id in request.params</p></td>
+        </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of todo that was Deleted</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Get_All_Todos"><span class="type-signature type-signature-async">(async) </span>Get_All_Todos<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#AllTodos">AllTodos</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>GET   /auth/todo</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Get all Todos from the database</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line217">line 217</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">request</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sent request</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#AllTodos">AllTodos</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array with all Todos</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#AllTodos">AllTodos</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Get_All_Users"><span class="type-signature type-signature-async">(async) </span>Get_All_Users<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#AllUsers">AllUsers</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>GET   /auth/users</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Get all users from the database</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line181">line 181</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">request</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sent request</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#AllUsers">AllUsers</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array with all registered Users</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#AllUsers">AllUsers</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Get_One_Todo"><span class="type-signature type-signature-async">(async) </span>Get_One_Todo<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#Todo">Todo</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>GET   /auth/todo/:id</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Get One Todo from the database</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line240">line 240</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">request</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sent Id in request.params</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of one todo</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="LoginAuthentication"><span class="type-signature type-signature-async">(async) </span>Login Authentication<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#Token">Token</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>POST   /auth/login</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Login Authentication</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line129">line 129</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#User">User</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>sent User information in request body</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#Token">Token</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Take JWT token</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#Token">Token</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Registration"><span class="type-signature type-signature-async">(async) </span>Registration<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#NewUser">NewUser</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>POST   /auth/registration</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Registration of New User</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#User">User</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sent username and password in request.body</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#NewUser">NewUser</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Take username, hashpassword, roles and Id</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#NewUser">NewUser</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Update_Todo"><span class="type-signature type-signature-async">(async) </span>Update_Todo<span class="signature">(request, response)</span><span class="type-signature"> &rarr; {array.&lt;<a href="global.html#Todo">Todo</a>>|string}</span></h4>
+
+    
+    <p class="summary usertext"><p>PUT    /auth/todo</p></p>
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Updating an existing todo</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line312">line 312</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sent information in request body</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of todo that was Updated</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>200 - success response - application/json</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;<a href="global.html#Todo">Todo</a>></span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>400 - Bad request response</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
@@ -304,13 +1857,13 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Many Todos</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Array with many Todos</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line195">line 195</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line212">line 212</a>
     </li></ul></dd>
     
 
@@ -390,7 +1943,7 @@
 
             
 
-            <td class="description last"><p>One Todo</p></td>
+            <td class="description last"><p>One Todo information</p></td>
         </tr>
 
     
@@ -403,7 +1956,7 @@
 
 
 <div class="description usertext">
-    <p>Many Todos</p>
+    <p>Array with many Todos</p>
 </div>
 
 
@@ -441,7 +1994,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line159">line 159</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -521,7 +2074,7 @@
 
             
 
-            <td class="description last"><p>One User</p></td>
+            <td class="description last"><p>One User Information</p></td>
         </tr>
 
     
@@ -565,11 +2118,14 @@
 
 <dl class="details">
     
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Array information of user that was created</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line26">line 26</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -649,7 +2205,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Username</p></td>
         </tr>
 
     
@@ -673,7 +2229,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Hashpassword</p></td>
         </tr>
 
     
@@ -697,7 +2253,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Users Role. By default [&quot;USER&quot;]</p></td>
         </tr>
 
     
@@ -721,7 +2277,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Id number</p></td>
         </tr>
 
     
@@ -733,201 +2289,9 @@
 
 
 
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">object</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="NewUser">NewUser</h4>
-
-
-
-
-
-<dl class="details">
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line263">line 263</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>password</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>roles</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
+<div class="description usertext">
+    <p>Array information of user that was created</p>
+</div>
 
 
 
@@ -957,11 +2321,14 @@
 
 <dl class="details">
     
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>All infromation about one Todo</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line187">line 187</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line204">line 204</a>
     </li></ul></dd>
     
 
@@ -1041,7 +2408,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Id of Todo</p></td>
         </tr>
 
     
@@ -1065,7 +2432,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Title of Todo</p></td>
         </tr>
 
     
@@ -1089,7 +2456,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Description of Todo</p></td>
         </tr>
 
     
@@ -1100,6 +2467,10 @@
 
 
 
+
+<div class="description usertext">
+    <p>All infromation about one Todo</p>
+</div>
 
 
 
@@ -1129,11 +2500,14 @@
 
 <dl class="details">
     
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Create Schema for one Todo</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line257">line 257</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line275">line 275</a>
     </li></ul></dd>
     
 
@@ -1249,6 +2623,10 @@
 
 
 
+<div class="description usertext">
+    <p>Create Schema for one Todo</p>
+</div>
+
 
 
     <h5 class="h5-types">Type:</h5>
@@ -1284,7 +2662,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line102">line 102</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line116">line 116</a>
     </li></ul></dd>
     
 
@@ -1364,7 +2742,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>JWT Token</p></td>
         </tr>
 
     
@@ -1408,11 +2786,14 @@
 
 <dl class="details">
     
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Array information about User in request body</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line109">line 109</a>
+        <a href="authController.js.html">authController.js</a>, <a href="authController.js.html#line123">line 123</a>
     </li></ul></dd>
     
 
@@ -1492,7 +2873,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Username</p></td>
         </tr>
 
     
@@ -1516,7 +2897,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>Password</p></td>
         </tr>
 
     
@@ -1527,6 +2908,10 @@
 
 
 
+
+<div class="description usertext">
+    <p>Array information about User in request body</p>
+</div>
 
 
 
@@ -1564,7 +2949,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.0</a> on Tue Nov 22 2022 18:28:44 GMT+0700 (Индокитай) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.0</a> on Wed Nov 23 2022 19:06:51 GMT+0700 (Индокитай) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

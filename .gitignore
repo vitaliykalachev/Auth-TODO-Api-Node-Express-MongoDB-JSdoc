@@ -53,3 +53,4 @@ out/
 
 # Dotfile detritus
 .DS_Store
+.vercel

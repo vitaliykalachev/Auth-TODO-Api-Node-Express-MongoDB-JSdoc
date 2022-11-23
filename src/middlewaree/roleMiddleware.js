@@ -1,12 +1,14 @@
+/**
+ * @module roleMiddleware [Role]
+ * @see module:authRouter
+ */
+
+
 const jwt = require('jsonwebtoken')
 const {secret} = require('../config')
 
 
-/**
- * @middleware
- * @param {*} roles 
- * @returns 
- */
+
 module.exports = function (roles) {
     return function (req, res, next) {
         if(req.method === "OPTIONS") {

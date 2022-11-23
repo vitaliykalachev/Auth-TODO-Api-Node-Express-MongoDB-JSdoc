@@ -15,7 +15,9 @@
         "encoding": "utf8",
         "destination": "docs/",
         "recurse": true,
-        "verbose": true
+        "verbose": true,
+        "tutorials": "./tutorials"
+        
     },
     "templates": {
         "cleverLinks": true,

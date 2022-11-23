@@ -1,14 +1,20 @@
+/**
+ * @module authRouter [All routers]
+ */
+
 const Router = require('express')
+
+
 const router = new Router()
 const controller = require('./authController')
 const {check} = require('express-validator')
+
+
 const authMiddleware = require('./middlewaree/authMiddleware')
 const roleMiddleware = require('./middlewaree/roleMiddleware')
 
 
-/**
- * @route 
- */
+
 router.post('/registration', [
     check('username', 'Username cannot be empty').notEmpty(),
     check('password', 'Password must be longer than 4 and shorter than 10 characters').isLength({min:4, max:10})

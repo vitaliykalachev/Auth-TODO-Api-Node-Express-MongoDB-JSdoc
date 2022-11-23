@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>index.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -35,151 +35,55 @@
 
 <div id="main">
     
+    <h1 class="page-title">index.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// @ts-check
+
+const express = require("express");
+const mongoose = require("mongoose");
+const authRouter = require("./authRouter");
+const PORT = process.env.PORT || 5000;
+const cors = require("cors");
+const app = express();
+
+/**
+ * @file index.js is the hompage for this application
+ * @author Vitliy Kalachev
+ * @see &lt;a href="https://vitaliykalachev.github.io/">CV Profile&lt;/a>
+ * @see &lt;a href="https://github.com/vitaliykalachev">Github&lt;/a>
+ */
+app.use(cors({
+  origin: ["http://localhost:5000"],
+  credentials: true
+}));
+app.use(express.json());
+app.use("/auth", authRouter);
 
 
-    <section class="package">
-        <h3> </h3>		
+
+const start = async () => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://vitaliy:Password123@cluster0.2txctsn.mongodb.net/?retryWrites=true&amp;w=majority"
+    );
+    app.listen(PORT, () => console.log("server started on port " + PORT));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+start();
+</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-            index.js
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>index.js is the hompage for this application</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line10">line 10</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Vitliy Kalachev</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://vitaliykalachev.github.io/">CV Profile</a></li>
-        
-            <li><a href="https://github.com/vitaliykalachev">Github</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-            
-                <div class="description usertext"><p>index.js is the hompage for this application</p></div>
-            
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
 
 
 
