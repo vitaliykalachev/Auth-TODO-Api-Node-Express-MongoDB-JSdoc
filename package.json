@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "``` <div></div> ```",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "nodemon src/index.js",
     "generate-docs": "jsdoc -c jsdoc.json"
