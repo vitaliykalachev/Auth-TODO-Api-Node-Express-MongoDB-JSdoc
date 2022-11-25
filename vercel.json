@@ -8,11 +8,6 @@
       }
     ],
 
-    "github": {
-        "enabled": true,
-        "silent": true
-        },
-
     "routes": [
       {
         "src": "/src/(.*)",
