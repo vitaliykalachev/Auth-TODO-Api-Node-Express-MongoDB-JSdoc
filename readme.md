@@ -18,30 +18,30 @@
 
 <hr/>
 
-### How to run
-#### Download
+## How to run
+### Download
 ```
 git pull https://github.com/vitaliykalachev/Auth-TODO-Api-Node-Express-MongoDB-JSdoc.git
 ```
-#### Install
+### Install
 ```
 npm install
 ```
-#### Usage
+### Usage
 ```
 npm run start
 ```
-#### Documentation
+### Documentation
 ###### All CRUD methods
 ``` 
 https://vitaliykalachev.github.io/Auth-TODO-Api-Node-Express-MongoDB-JSdoc/Controller.html 
 ```
-#### Vercel API Link 
+### Vercel API Link 
 ```
 https://auth-todo-list-beige.vercel.app/
 ```
 
-#### Author
+### Author
 ##### [Vitaliy Kalachev](https://vitaliykalachev.github.io) 
 
 
