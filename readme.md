@@ -1,5 +1,5 @@
 # Todo list API  
-### Technology stack:
+## Technology stack:
 
 - NodeJS
 - Express
@@ -8,20 +8,23 @@
 - bcrypt (for password hashing)
 - Vercel Deploy
 
-### Functional:
+## Functionality:
 
 - User registration/authorization. During authorization, the user on the client receives a JWT from which you can get the user id.
 - An authorized user has access to CRUD endpoints for the todo entity (The middleware in which the valid token is checked)
 - It is possible to receive todo  both all at once and page by page
 - Documetation: 
-``` https://vitaliykalachev.github.io/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc/ ```
-
-<hr/>
-
-How to run
-
+``` 
+https://vitaliykalachev.github.io/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc/ 
 ```
-<
+
+
+
+### How to run:
+
+Download project
+```
+npm install
 ```
 
 **Bold**
