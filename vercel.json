@@ -9,10 +9,10 @@
     ],
 
     "github": {
-        "enabled": false,
+        "enabled": true,
         "silent": true
         },
-        
+
     "routes": [
       {
         "src": "/src/(.*)",
