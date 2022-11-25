@@ -6,8 +6,13 @@
         "src": "/src/index.js",
         "use": "@vercel/node"
       }
-      
     ],
+
+    "github": {
+        "enabled": false,
+        "silent": true
+        },
+        
     "routes": [
       {
         "src": "/src/(.*)",
