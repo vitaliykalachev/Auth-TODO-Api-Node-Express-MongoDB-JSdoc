@@ -11,7 +11,6 @@ const { secret } = require("./config");
  * @member {object}
  * @param {string} id
  * @param {string} roles
- * @returns
  */
 const generateAccessToken = (id, roles) => {
   const payload = {
