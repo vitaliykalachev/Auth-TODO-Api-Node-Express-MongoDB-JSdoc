@@ -21,7 +21,7 @@ const generateAccessToken = (id, roles) => {
   return jwt.sign(payload, secret, { expiresIn: "24h" });
 };
 /**
- * @class 
+ * @class
  * @constructs Controller
  * @classdesc all CRUD methods
  * @property {authController.registration} registration Registration
@@ -32,7 +32,7 @@ const generateAccessToken = (id, roles) => {
  * @property {authController.create} create Create_Todo
  * @property {authController.update} update Update_Todo
  * @property {authController.delete} delete Delete_Todo
- * 
+ *
  */
 class authController {
   /**
@@ -62,52 +62,32 @@ class authController {
 
   async registration(request, response) {
     try {
-      /**
-       * Validation
-       */
       const errors = validationResult(request);
       if (!errors.isEmpty()) {
         return response
           .status(400)
           .json({ message: "Registration Validation error", errors });
       }
-      /**
-       * Get username and password from request body
-       */
+
       const { username, password } = request.body;
-      /**
-       * Database comparison.
-       * Does such a user exist in the database?
-       */
+
       const candidate = await User.findOne({ username });
       if (candidate) {
         return response.status(400).json({ message: "User already exists" });
       }
-      /**
-       * Password hashing
-       */
+
       const hashPassword = bcrypt.hashSync(password, 7);
-      /**
-       * Default role - "USER".
-       * To create an admin, you need to change "USER" to "ADMIN"
-       */
+
       const userRole = await Role.findOne({ value: "USER" });
-      /**
-       * New user details
-       */
+
       const user = new User({
         username,
         password: hashPassword,
         roles: [userRole.value],
       });
-      /**
-       * Saving the user to the database
-       */
+
       await user.save();
-      /**
-       * Response with data about the saved User
-       * @
-       */
+
       return response.json(user);
     } catch (e) {
       response.status(400).json({ message: "Registration error" });
@@ -142,30 +122,21 @@ class authController {
 
   async login(request, response) {
     try {
-      /**
-       * Get username and password from request body
-       */
+    
       const { username, password } = request.body;
-      /**
-       * Database comparison.
-       * Does such a user exist in the database?
-       */
+     
       const user = await User.findOne({ username });
       if (!user) {
         return response
           .status(400)
           .json({ message: "User " + username + " is not found" });
       }
-      /**
-       * Comparing the entered password with the password in the database
-       */
+      
       const validPassword = bcrypt.compareSync(password, user.password);
       if (!validPassword) {
         return response.status(400).json({ message: "Wrong password" });
       }
-      /**
-       * Generation and receipt of Token for user id and user role
-       */
+      
       const token = generateAccessToken(user._id, user.roles);
       return response.json({ token });
     } catch (e) {
@@ -253,16 +224,12 @@ class authController {
 
   async getOne(request, response) {
     try {
-      /**
-       * Sent id of todo in request.params
-       */
+     
       const { id } = request.params;
       if (!id) {
         response.status(400).json({ message: "Id not specified" });
       }
-      /**
-       * Finding the todo by id in the database and return it in the response
-       */
+      
       const todo = await Todo.findById(id);
       if (!todo) {
         response.status(400).json({ message: "Item does not exists" });
@@ -294,14 +261,9 @@ class authController {
 
   async create(request, response) {
     try {
-      /**
-       * Sent title and description of todo in request body
-       *
-       */
+     
       const { title, description } = request.body;
-      /**
-       * Creating a new todo in the database and return it in the response
-       */
+     
       const todo = await Todo.create({ title, description });
       return response.json(todo);
     } catch (e) {
@@ -324,20 +286,12 @@ class authController {
    */
   async update(request, response) {
     try {
-      /**
-       * Sent id, title and description of todo in request body
-       *
-       */
+     
       const todo = request.body;
       if (!todo._id) {
         response.status(400).json({ message: "Id not specified" });
       }
-      /**
-       * Finding the todo by id in the database and Updating.
-       * Then return updated todo in the response
-       *
-       */
-
+     
       const updatedTodo = await Todo.findByIdAndUpdate(todo._id, todo, {
         new: true,
       });
@@ -371,10 +325,7 @@ class authController {
         response.status(400).json({ message: "Id not specified" });
       }
 
-      /**
-       * Finding the todo by id in the database and Deleting it.
-       * Then return deleted todo in the response
-       */
+      
       const todo = await Todo.findByIdAndDelete(id);
       if (!todo) {
         response.status(400).json({ message: "Item does not exists" });

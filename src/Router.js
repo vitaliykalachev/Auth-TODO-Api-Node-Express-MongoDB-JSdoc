@@ -6,12 +6,12 @@ const Router = require('express')
 
 
 const router = new Router()
-const controller = require('./authController')
+const controller = require('./Controller')
 const {check} = require('express-validator')
 
 
-const authMiddleware = require('./middlewaree/authMiddleware')
-const roleMiddleware = require('./middlewaree/roleMiddleware')
+const authMiddleware = require('./middleware/authMiddleware')
+const roleMiddleware = require('./middleware/roleMiddleware')
 
 
 

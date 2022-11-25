@@ -7,7 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "node src/index.js",
     "generate-docs": "jsdoc -c jsdoc.json"
   },
   "keywords": [],
