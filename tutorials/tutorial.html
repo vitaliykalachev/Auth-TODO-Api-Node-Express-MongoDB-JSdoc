@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <p>
-        Hello 42
-    </p>
+    <h1 id="todo-list-api">Todo list API</h1>
+    <h2 id="technology-stack-">Technology stack:</h2>
+    <ul>
+        <li>NodeJS</li>
+        <li>Express</li>
+        <li>MongoDB/Mongoose</li>
+        <li>JWT</li>
+        <li>bcrypt (for password hashing)</li>
+        <li>Vercel Deploy</li>
+    </ul>
+    <h2 id="functionality-">Functionality:</h2>
+    <ul>
+        <li>User registration/authorization. During authorization, the user on the client receives a JWT from which you
+            can get the user id.</li>
+        <li>An authorized user has access to CRUD endpoints for the todo entity (The middleware in which the valid token
+            is checked)</li>
+        <li>It is possible to receive todo both all at once and page by page</li>
+        <li>CRUD Documetation</li>
+    </ul>
+    <hr />
+
+    <h2 id="how-to-run">How to run</h2>
+    <h3 id="download">Download</h3>
+    <pre><code>git pull https://github.com/vitaliykalachev/Auth-TODO-Api-<span class="hljs-keyword">Node</span><span class="hljs-title">-Express-MongoDB-JSdoc</span>.git
+</code></pre>
+    <h3 id="install">Install</h3>
+    <pre><code>npm <span class="hljs-keyword">install</span>
+</code></pre>
+    <h3 id="usage">Usage</h3>
+    <pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> start</span>
+</code></pre>
+    <h3 id="documentation">Documentation</h3>
+    <h6 id="all-crud-methods">All CRUD methods</h6>
+    <pre><code>https://vitaliykalachev.github.io/Auth-TODO-Api-<span class="hljs-keyword">Node</span><span class="hljs-title">-Express-MongoDB-JSdoc</span>/Controller.html
+</code></pre>
+    <h3 id="vercel-api-link">Vercel API Link</h3>
+    <pre><code><span class="hljs-symbol">https:</span><span class="hljs-comment">//auth-todo-list-beige.vercel.app/</span>
+</code></pre>
+    <h3 id="author">Author</h3>
+    <h5 id="-vitaliy-kalachev-https-vitaliykalachev-github-io-"><a href="https://vitaliykalachev.github.io">Vitaliy
+            Kalachev</a></h5>
+
 </body>
+
 </html>
