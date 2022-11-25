@@ -9,7 +9,7 @@ const app = express();
 
 /**
  * @file index.js is the hompage for this application
- * @author Vitliy Kalachev
+ * @author Vitaliy Kalachev
  * @see <a href="https://vitaliykalachev.github.io/">CV Profile</a>
  * @see <a href="https://github.com/vitaliykalachev">Github</a>
  */
