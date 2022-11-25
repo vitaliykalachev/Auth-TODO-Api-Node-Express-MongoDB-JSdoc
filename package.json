@@ -35,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc/issues"
   },
-  "homepage": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc#readme"
+  "homepage": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc#readme",
+  "devDependencies": {
+    "@vercel/node": "^2.6.4"
+  }
 }
