@@ -7,11 +7,17 @@
           "use": "@vercel/node"
         }
       ],
+      
+        "github": {
+          "enabled": false
+        },
+      
 
+    "routes": [
+      {
+        "src": "/auth",
+        "dest": "/index.js"
       
-        "rewrites": [{ "source": "./(.*)", "destination": "./" }]
-      
-      
-
-   
+      }
+    ]
   }
