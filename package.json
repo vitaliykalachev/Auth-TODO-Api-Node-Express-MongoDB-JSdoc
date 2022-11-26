@@ -1,42 +1,85 @@
 {
-  "name": "auth_todo_list",
-  "version": "1.0.0",
-  "description": "``` <div>Description here</div> ```",
-  "main": "src/index.js",
-  "engines": {
-    "node": "18.x"
-  },
+  
   "scripts": {
-    "start": "node src/index.js",
-    "generate-docs": "jsdoc -c jsdoc.json"
+  
+    
+  "start": "node src/index.js",
+  
+    
+  "generate-docs": "jsdoc -c jsdoc.json"
+  
   },
+  
   "keywords": [],
+  
   "author": "Vitaliy Kalachev",
+  
   "license": "ISC",
+  
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "docdash": "^2.0.0",
-    "express": "^4.18.2",
-    "express-validator": "^6.14.2",
-    "jsdoc": "^4.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.2",
-    "nodemon": "^2.0.20",
-    "vercel": "^28.5.6"
+  
+    
+  "bcryptjs": "^2.4.3",
+  
+    
+  "cors": "^2.8.5",
+  
+    
+  "docdash": "^2.0.0",
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "express-validator": "^6.14.2",
+  
+    
+  "jsdoc": "^4.0.0",
+  
+    
+  "jsonwebtoken": "^8.5.1",
+  
+    
+  "mongoose": "^6.7.2",
+  
+    
+  "nodemon": "^2.0.20",
+  
+    
+  "vercel": "^28.5.6"
+  
   },
+  
   "directories": {
-    "doc": "docs"
+  
+    
+  "doc": "docs"
+  
   },
+  
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc.git"
+  
+    
+  "type": "git",
+  
+    
+  "url": "git+https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc.git"
+  
   },
+  
   "bugs": {
-    "url": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc/issues"
+  
+    
+  "url": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc/issues"
+  
   },
+  
   "homepage": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc#readme",
+  
   "devDependencies": {
-    "@vercel/node": "^2.6.4"
+  
+    
+  "@vercel/node": "^2.6.4"
+  
   }
 }
