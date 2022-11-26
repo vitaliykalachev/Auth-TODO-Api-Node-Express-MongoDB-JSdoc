@@ -43,4 +43,4 @@ const start = async () => {
 };
 
 
-
+start();
