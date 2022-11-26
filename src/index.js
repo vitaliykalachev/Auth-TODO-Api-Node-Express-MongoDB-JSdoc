@@ -2,7 +2,7 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-const authRouter = require("./Router");
+const Router = require("./Router");
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const app = express();
@@ -23,8 +23,13 @@ app.use(
     credentials: true,
   })
 );
+
+app.get('/', (req,res) => {
+  res.send("This is a sample express app")
+})
+
 app.use(express.json());
-app.use("/auth", authRouter);
+app.use("/auth", Router);
 
 const start = async () => {
   try {
