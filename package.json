@@ -1,6 +1,6 @@
 {
   "name": "auth_todo_list",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "``` <div>Description here</div> ```",
   "main": "src/index.js",
   "engines": {
