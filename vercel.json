@@ -2,8 +2,11 @@
     "routes": [
         {
             "src": "/",
-            "dest": "/"
+            "dest": "/src/index.js"
+        },
+        {
+            "src": "/auth",
+            "dest": "/src/Router.js"
         }
-      
     ]
 }
