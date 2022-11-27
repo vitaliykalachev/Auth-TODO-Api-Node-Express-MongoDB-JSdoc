@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "e492d8c4-ef9d-4f7f-b043-3e18f46cfbc3",
+		"name": "Todo List Posman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21164784"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"username\");",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"password\");",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"roles\");",
+							"    pm.collectionVariables.set(\"Username\", responseJson.username);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"pas123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/registration",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"  pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all properties\", () => {",
+							"",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"  ",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"token\");",
+							"    pm.collectionVariables.set(\"Token\", responseJson.token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{Username}}\",\n    \"password\": \"pas123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"users\");",
+							"    pm.expect(responseJson.users[0]).to.haveOwnProperty(\"_id\");",
+							"    pm.expect(responseJson.users[0]).to.haveOwnProperty(\"username\");",
+							"    pm.expect(responseJson.users[0]).to.haveOwnProperty(\"username\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/auth/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"title\");",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"description\");",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"_id\");",
+							"   ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"{{$randomWord}}\",\n    \"description\": \"{{$randomPhrase}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/todo",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"todos\");",
+							"    pm.expect(responseJson.todos[0]).to.haveOwnProperty(\"_id\");",
+							"    pm.expect(responseJson.todos[0]).to.haveOwnProperty(\"title\");",
+							"    pm.expect(responseJson.todos[0]).to.haveOwnProperty(\"description\");",
+							"    pm.collectionVariables.set(\"Todo_id\", responseJson.todos[0]._id);",
+							"   ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/auth/todo",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "one todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"todo\");",
+							"    pm.expect(responseJson.todo).to.haveOwnProperty(\"_id\");",
+							"    pm.expect(responseJson.todo).to.haveOwnProperty(\"title\");",
+							"    pm.expect(responseJson.todo).to.haveOwnProperty(\"description\");",
+							"    ",
+							"   ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/auth/todo/{{Todo_id}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"todo",
+						"{{Todo_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    ",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"_id\");",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"title\");",
+							"    pm.expect(responseJson.title).to.equal(\"Todo Changed\");",
+							"    pm.expect(responseJson.description).to.equal(\"Description Changed\");",
+							"",
+							"    ",
+							"   ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"{{Todo_id}}\",\n    \"title\": \"Todo Changed\",\n    \"description\": \"Description Changed\",\n    \"__v\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/todo",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"todo"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    tests[\"[INFO] Response: \" + responseBody] = true;",
+							"    ",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"_id\");",
+							"    pm.expect(responseJson).to.haveOwnProperty(\"title\");",
+							"    pm.expect(responseJson.title).to.equal(\"Todo Changed\");",
+							"    pm.expect(responseJson.description).to.equal(\"Description Changed\");",
+							"",
+							"    ",
+							"   ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/auth/todo/{{Todo_id}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"todo",
+						"{{Todo_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://auth-todo-list-fawn.vercel.app",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Todo_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

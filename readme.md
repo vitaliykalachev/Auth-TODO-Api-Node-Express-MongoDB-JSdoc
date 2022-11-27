@@ -14,6 +14,7 @@
 - An authorized user has access to CRUD endpoints for the todo entity (The middleware in which the valid token is checked)
 - It is possible to receive todo  both all at once and page by page
 - CRUD Documetation
+- Postman collection with autotests
 
 
 <hr/>
@@ -41,6 +42,9 @@ https://vitaliykalachev.github.io/Auth-TODO-Api-Node-Express-MongoDB-JSdoc/Contr
 https://auth-todo-list-fawn.vercel.app/
 ```
 
+### Postman testing
+- import ```todo_list.postman_collection.json``` into Postman
+- run collection
 ### Author
 ##### [Vitaliy Kalachev](https://vitaliykalachev.github.io) 
 

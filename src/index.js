@@ -7,6 +7,16 @@ const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const app = express();
 
+
+/**
+ * 
+ * @param {object} user 
+ * @returns {string} firstName and lastName
+ */
+const getUserFullName = (user) => {
+  return `${user.firstName} ${user.lastName}`
+}
+
 /**
  * @file index.js is the hompage for this application
  * @author Vitaliy Kalachev
