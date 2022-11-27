@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "node src/index.js",
-    "generate-docs": "jsdoc -c jsdoc.json"
+    "generate-docs": "jsdoc -c jsdoc.json",
+    "build": "vercel src/index.js"
   },
   "keywords": [],
   "author": "Vitaliy Kalachev",

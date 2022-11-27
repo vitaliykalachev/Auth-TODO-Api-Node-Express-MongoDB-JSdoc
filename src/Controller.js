@@ -11,7 +11,7 @@ const { secret } = require("./config");
  * @member {object}
  * @param {string} id
  * @param {string} roles
- * 
+ *
  */
 const generateAccessToken = (id, roles) => {
   const payload = {
@@ -54,9 +54,9 @@ class authController {
    *
    * @async
    * @function
-   * @param {array<User>} request Sent username and password in request.body
-   * @param {array<NewUser>} response Take username, hashpassword, roles and Id
-   * @return {array<NewUser>} 200 - success response - application/json
+   * @param {object<User>} request Sent username and password in request.body
+   * @param {object<NewUser>} response Take username, hashpassword, roles and Id
+   * @return {object<NewUser>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
 
@@ -113,30 +113,29 @@ class authController {
    *
    * @async
    * @function
-   * @param {array<User>} request sent User information in request body
-   * @param {array<Token>} response Take JWT token
+   * @param {object<User>} request sent User information in request body
+   * @param {object<Token>} response Take JWT token
    *
-   * @return {array<Token>} 200 - success response - application/json
+   * @return {object<Token>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
 
   async login(request, response) {
     try {
-    
       const { username, password } = request.body;
-     
+
       const user = await User.findOne({ username });
       if (!user) {
         return response
           .status(400)
           .json({ message: "User " + username + " is not found" });
       }
-      
+
       const validPassword = bcrypt.compareSync(password, user.password);
       if (!validPassword) {
         return response.status(400).json({ message: "Wrong password" });
       }
-      
+
       const token = generateAccessToken(user._id, user.roles);
       return response.json({ token });
     } catch (e) {
@@ -146,7 +145,7 @@ class authController {
   /**
    * @typedef {object} AllUsers Array with All Users
    *
-   * @property {array<User>}  User  One User Information
+   * @property {object<User>}  User  One User Information
    */
 
   /**
@@ -157,9 +156,9 @@ class authController {
    * @async
    * @function
    * @param {request} request Sent request
-   * @param {array<AllUsers>} response Array with all registered Users
+   * @param {object<AllUsers>} response Array with all registered Users
    *
-   * @return {array<AllUsers>} 200 - success response - application/json
+   * @return {object<AllUsers>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
   async getUsers(request, response) {
@@ -182,7 +181,7 @@ class authController {
 
   /**
    * @typedef {object} AllTodos Array with many Todos
-   * @property {array<Todo>}  Todo  One Todo information
+   * @property {object<Todo>}  Todo  One Todo information
    */
 
   /**
@@ -193,9 +192,9 @@ class authController {
    * @async
    * @function
    * @param {request} request Sent request
-   * @param {array<AllTodos>} response Array with all Todos
+   * @param {object<AllTodos>} response Array with all Todos
    *
-   * @return {array<AllTodos>} 200 - success response - application/json
+   * @return {object<AllTodos>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
 
@@ -216,20 +215,19 @@ class authController {
    * @async
    * @function
    * @param {request} request Sent Id in request.params
-   * @param {array<Todo>} response Array of one todo
+   * @param {object<Todo>} response Array of one todo
    *
-   * @return {array<Todo>} 200 - success response - application/json
+   * @return {object<Todo>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
 
   async getOne(request, response) {
     try {
-     
       const { id } = request.params;
       if (!id) {
         response.status(400).json({ message: "Id not specified" });
       }
-      
+
       const todo = await Todo.findById(id);
       if (!todo) {
         response.status(400).json({ message: "Item does not exists" });
@@ -252,18 +250,17 @@ class authController {
    *
    * @async
    * @function
-   * @param {array<TodoCreate>} request Sent information in request body
-   * @param {array<Todo>} response Array of todo that was created
+   * @param {object<TodoCreate>} request Sent information in request body
+   * @param {object<Todo>} response Array of todo that was created
    *
-   * @return {array<Todo>} 200 - success response - application/json
+   * @return {object<Todo>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
 
   async create(request, response) {
     try {
-     
       const { title, description } = request.body;
-     
+
       const todo = await Todo.create({ title, description });
       return response.json(todo);
     } catch (e) {
@@ -278,20 +275,19 @@ class authController {
    *
    * @async
    * @function
-   * @param {array<Todo>} request Sent information in request body
-   * @param {array<Todo>} response Array of todo that was Updated
+   * @param {object<Todo>} request Sent information in request body
+   * @param {object<Todo>} response Array of todo that was Updated
    *
-   * @return {array<Todo>} 200 - success response - application/json
+   * @return {object<Todo>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
   async update(request, response) {
     try {
-     
       const todo = request.body;
       if (!todo._id) {
         response.status(400).json({ message: "Id not specified" });
       }
-     
+
       const updatedTodo = await Todo.findByIdAndUpdate(todo._id, todo, {
         new: true,
       });
@@ -313,9 +309,9 @@ class authController {
    * @async
    * @function
    * @param {request} request Sent Id in request.params
-   * @param {array<Todo>} response Array of todo that was Deleted
+   * @param {object<Todo>} response Array of todo that was Deleted
    *
-   * @return {array<Todo>} 200 - success response - application/json
+   * @return {object<Todo>} 200 - success response - application/json
    * @return {string} 400 - Bad request response
    */
   async delete(request, response) {
@@ -325,7 +321,6 @@ class authController {
         response.status(400).json({ message: "Id not specified" });
       }
 
-      
       const todo = await Todo.findByIdAndDelete(id);
       if (!todo) {
         response.status(400).json({ message: "Item does not exists" });

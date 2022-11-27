@@ -24,9 +24,9 @@ app.use(
   })
 );
 
-app.get('/', (req,res) => {
-  res.send("This is a sample express app")
-})
+app.get("/", (req, res) => {
+  res.send("This is a sample express app");
+});
 
 app.use(express.json());
 app.use("/auth", Router);
@@ -41,6 +41,5 @@ const start = async () => {
     console.log(e);
   }
 };
-
 
 start();
