@@ -36,5 +36,9 @@
   "name": "auth_todo_list",
   "description": "- NodeJS - Express - MongoDB/Mongoose - JWT - bcrypt (for password hashing) - Vercel Deploy",
   "version": "1.0.0",
-  "main": "src/index.js"
-}
+  "main": "src/index.js",
+  "engines": {
+    "node": "18.x"
+  }
+} 
+
