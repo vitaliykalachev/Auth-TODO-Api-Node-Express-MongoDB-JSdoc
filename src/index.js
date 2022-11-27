@@ -25,7 +25,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("This is a sample express app");
+  res.send("This is a sample test app");
 });
 
 app.use(express.json());
