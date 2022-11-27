@@ -38,7 +38,7 @@ https://vitaliykalachev.github.io/Auth-TODO-Api-Node-Express-MongoDB-JSdoc/Contr
 ```
 ### Vercel API Link 
 ```
-https://auth-todo-list-beige.vercel.app/
+https://auth-todo-list-fawn.vercel.app/
 ```
 
 ### Author

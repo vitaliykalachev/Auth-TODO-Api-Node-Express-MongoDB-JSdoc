@@ -19,6 +19,7 @@ app.use(
       "http://localhost:5000",
       "https://auth-todo-list-eight.vercel.app",
       "https://auth-todo-list-vitaliykalachev.vercel.app/",
+      "https://auth-todo-list-fawn.vercel.app"
     ],
     credentials: true,
   })
