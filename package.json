@@ -2,7 +2,6 @@
   "scripts": {
     "start": "node src/index.js",
     "generate-docs": "jsdoc -c jsdoc.json"
-    
   },
   "keywords": [],
   "author": "Vitaliy Kalachev",
@@ -16,7 +15,6 @@
     "jsdoc": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
-    "nodemon": "^2.0.20",
     "vercel": "^28.5.6"
   },
   "directories": {
@@ -31,12 +29,12 @@
   },
   "homepage": "https://github.com/vitaliykalachev/Auth-TODO-Api-Node.js-Exoress-MongoDB-JSdoc#readme",
   "devDependencies": {
-    "@vercel/node": "^2.6.4"
+    "@vercel/node": "^2.6.4",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
   },
   "name": "auth_todo_list",
   "description": "- NodeJS - Express - MongoDB/Mongoose - JWT - bcrypt (for password hashing) - Vercel Deploy",
   "version": "1.0.0",
   "main": "src/index.js"
-  
-} 
-
+}
