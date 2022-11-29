@@ -6,7 +6,7 @@ const Router = require("./Router");
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const app = express();
-require("dotenv").config();
+
 
 
 
@@ -39,8 +39,8 @@ app.use("/auth", Router);
 const start = async () => {
   try {
     await mongoose.connect(
-      process.env.MONGODB_URI
-      // "mongodb+srv://vitaliy:Password123@cluster0.2txctsn.mongodb.net/?retryWrites=true&w=majority"
+      
+      "mongodb+srv://vitaliy:Password123@cluster0.2txctsn.mongodb.net/?retryWrites=true&w=majority"
     );
     app.listen(PORT, () => console.log("server started on port " + PORT));
   } catch (e) {
